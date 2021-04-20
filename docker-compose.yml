@@ -1,0 +1,21 @@
+version: "3.4"
+services:
+  bee.dnp.dappnode.eth:
+    image: "bee.dnp.dappnode.eth:0.1.6"
+    build:
+      context: ./build
+      args:
+        UPSTREAM_VERSION: v0.5.2
+    ports:
+      - "1634:1634"
+    volumes:
+      - "bee:/home/bee/.bee"
+    environment:
+      - PASSWORD
+      - "BEE_SWAP_ENDPOINT=http://goerli-geth.dappnode:8545"
+      - EXTRA_OPTS
+      - BEE_DB_CAPACITY=5000000
+      - BEE_WELCOME_MESSAGE=Hello from my DAppNode!
+    restart: unless-stopped
+volumes:
+  bee: {}
