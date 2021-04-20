@@ -1,44 +1,42 @@
 {
-  "name": "prysm.dnp.dappnode.eth",
-  "version": "1.0.10",
-  "upstreamVersion": "v1.3.7",
-  "upstreamRepo": "prysmaticlabs/prysm",
-  "upstreamArg": "UPSTREAM_VERSION",
-  "shortDescription": "Prysm mainnet ETH2.0 Beacon chain + validator",
-  "description": "Validate with Prysm: a Go implementation of the Ethereum 2.0 Serenity protocol and open source project created by Prysmatic Labs.\n\nIt includes a Grafana dashboard for the [DMS](http://my.dappnode/#/installer/dms.dnp.dappnode.eth) thanks to the amazing work of [metanull-operator](https://github.com/metanull-operator/eth2-grafana)",
+  "name": "avalanche.public.dappnode.eth",
+  "version": "0.1.2",
+  "upstreamVersion": "v1.2.1",
+  "upstreamRepo": "ava-labs/avalanchego",
+  "shortDescription": "Avalanche",
+  "description": "Avalanche is an open-source platform for launching highly decentralized applications, new financial primitives, and new interoperable blockchains.",
+  "categories": ["Blockchain"],
+  "license": "GLP-3.0",
+  "mainService": "wallet",
   "type": "service",
-  "architectures": ["linux/amd64", "linux/arm64"],
-  "mainService": "validator",
-  "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
-  "contributors": [
-    "dappLion <dapplion@dappnode.io> (https://github.com/dapplion)"
-  ],
-  "license": "GPL-3.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dappnode/DAppNodePackage-prysm.git"
-  },
-  "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-prysm/issues"
-  },
-  "requirements": {
-    "minimumDappnodeVersion": "0.2.39"
-  },
   "backup": [
     {
-      "name": "eth2validators",
-      "path": "/root/.eth2validators",
-      "service": "validator"
+      "name": "staking",
+      "path": "/root/.avalanchego/staking",
+      "service": "avalanche"
     }
   ],
-  "categories": ["Blockchain", "ETH2.0"],
-  "style": {
-    "featuredBackground": "linear-gradient(67deg, #16000c, #123939)",
-    "featuredColor": "white"
+  "disclaimer": {
+    "message": "This software is experimental, presented 'as is' and inherently carries risks. By installing it, you acknowledge that DAppNode Association has done its best to mitigate these risks and accept to waive any liability or responsibility for DAppNode in case of any shortage, discrepancy, damage, loss or destruction of any digital asset managed within this DAppNode package.\n\nThis package stores private keys, which will be stored in your DAppNode. Neither DAppNode Association nor the developers of this software can have access to your private key, nor help you recover it if you lose it. \n\nYou are solely responsible for keeping your private keys and password safe and to perform secure backups, as well as to restrict access to your computer and other equipment. To the extent permitted by applicable law, you agree to be responsible for all activities that have been conducted from your account. You must take all necessary steps to ensure that your private key, password, and recovery phrase remain confidential and secured."
+  },
+  "author": "La ColmenaSVQ (https://github.com/Colm3na)",
+  "contributors": [
+    "Wimel (https://github.com/wimel)",
+    "Tropicar (https://github.com/tropicar)",
+    "Pablo (https://github.com/pablomendezroyo)",
+    "Pol (https://github.com/Pol-Lanski)",
+    "Edu (https://github.com/eduadiez)"
+  ],
+  "architectures": ["linux/amd64"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tropicar/testing"
+  },
+  "bugs": {
+    "url": "https://github.com/Colm3na/DAppNodePackage-avalanche/issues"
   },
   "links": {
-    "ui": "http://prysm.dappnode/",
-    "readme": "https://github.com/dappnode/DAppNodePackage-prysm",
-    "prysm": "https://prylabs.net"
+    "avalabs": "https://www.avalabs.org/",
+    "upstream releases": "https://github.com/ava-labs/avalanchego/releases"
   }
 }
